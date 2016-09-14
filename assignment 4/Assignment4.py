@@ -1,11 +1,27 @@
 import random
 
 stop = 0
+
 name = (input("whats your name? \n"))
+print("1. best of three \n2. best of five \n3. best of 7")
+modes = int((input("Select a game mode 1, 2 or 3? \n")))
+
+while modes >= 4:
+    modes = int((input("Select a game mode 1, 2 or 3? \n")))
+
+if modes == 1:
+    wins = 2
+elif modes == 2:
+    wins = 3
+elif modes == 3:
+    wins = 4
+
 playerwins = 0
 computerwins = 0
+
 print("Welcome ", name)
-while stop == 0:
+
+while playerwins != wins and computerwins != wins:
     pick = (input("whats your pick? \n"))
 
     randompick = ['rock', 'paper', 'scissors', 'lizard', 'spock']
@@ -86,7 +102,7 @@ while stop == 0:
 
     print("Standings ", playerwins, " - ", computerwins)
 
-    END = (input("Do you want to stop? N=No, Y=Yes \n"))
-#
-    if END == "y":
-        stop = 1
+if playerwins > computerwins:
+    print(name, "wins")
+else:
+    print("Computer wins")
