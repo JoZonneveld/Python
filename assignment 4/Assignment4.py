@@ -3,7 +3,7 @@ import random
 stop = 0
 
 name = (input("whats your name? \n"))
-print("1. best of three \n2. best of five \n3. best of 7")
+print("1. best of three \n2. best of five \n3. best of seven")
 modes = int((input("Select a game mode 1, 2 or 3? \n")))
 
 while modes >= 4:
