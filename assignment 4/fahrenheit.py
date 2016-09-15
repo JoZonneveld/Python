@@ -1,4 +1,3 @@
-
 Fx = int(input("Voer het aantal fahrenheit in: \n"))
 
 CS = (Fx - 32) / 1.8

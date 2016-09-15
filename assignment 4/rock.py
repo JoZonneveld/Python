@@ -57,7 +57,7 @@ var2 = StringVar()
 label = Label(root, textvariable=var, relief=FLAT)
 label2 = Label(root, textvariable=var2, relief=FLAT)
 
-root.title("rock, paper sissors")
+root.title("rock, paper scissors")
 root.geometry("150x125")
 
 app = Frame(root)
