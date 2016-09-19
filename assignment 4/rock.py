@@ -73,10 +73,15 @@ var2 = StringVar()
 label = Label(root, textvariable=var, relief=FLAT)
 label2 = Label(root, textvariable=var2, relief=FLAT)
 
+<<<<<<< HEAD
 var.set("Welcome to rock, paper scissors")
 
 root.title("rock, paper sissors")
 root.geometry("175x125")
+=======
+root.title("rock, paper scissors")
+root.geometry("150x125")
+>>>>>>> origin/master
 
 app = Frame(root)
 app.grid()
