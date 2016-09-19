@@ -3,15 +3,35 @@ password = input("Vul uw wachtwoord in: \n")
 
 i = len(password)
 
-if re.match("^[a-z0-9_]*$", password):
-    uppercase = 0
-    special = 0
-elif re.match("^[A-Z_]*$", password):
-    uppercase = 1
-else:
-    special = 1
+passwordstrenght = 0
 
-if i < 8 and uppercase == 1 or special == 1:
-    print("kleiner dan 8 en uppercase is used")
-elif i < 8 and special == 1:
-    print("kleiner dan 8 en special is used")
+if re.search(r'[A-Z]', password):
+    passwordstrenght = passwordstrenght + 1
+
+if re.search(r'[0-9_]', password):
+    passwordstrenght = passwordstrenght + 1
+
+if re.search(r'[a-z_]', password):
+    passwordstrenght = passwordstrenght + 1
+
+if re.search(r'[,_._@_#_$_%_^_&_*_!]', password):
+    passwordstrenght = passwordstrenght + 2
+
+if i > 7 and i < 12:
+    passwordstrenght = passwordstrenght + 1
+elif i >= 12:
+    passwordstrenght = passwordstrenght + 2
+
+print("Your password scored ", passwordstrenght, "points of 7")
+
+if passwordstrenght > 5:
+    print("Your password is strong")
+elif passwordstrenght <= 5 and passwordstrenght > 3:
+    print("Your password is medium")
+elif passwordstrenght > 0 and passwordstrenght <= 3:
+    print("Your password is weak")
+
+
+
+
+
