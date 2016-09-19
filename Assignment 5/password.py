@@ -9,3 +9,5 @@ elif i > 7 and i < 15:
 elif i < 7:
     print("Weak")
 
+#joost
+
