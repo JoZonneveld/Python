@@ -1,6 +1,5 @@
 x = input("Vul uw antwoord in: \n")
 
-print(x[::-1])
-
-
+for c in reversed(x):
+    print(c, end="")
 #joost
