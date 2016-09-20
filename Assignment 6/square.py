@@ -1,3 +1,6 @@
+import int as int
+import range as range
+
 breedte = int(input("Voer een getal in: \n"))
 hoogte = int(input("Voer een getal in: \n"))
 
