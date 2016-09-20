@@ -1,4 +1,9 @@
 breedte = int(input("Voer een getal in: \n"))
+hoogte = int(input("Voer een getal in: \n"))
 
-for i in range(breedte):
-    print('*' * breedte)
+for a in range(hoogte):
+    output = ""
+    for i in range(breedte):
+        output = output + "*"
+
+    print(output)
