@@ -1,6 +1,3 @@
-import get as get
-from Start import *
-
 """
 This assignment uses a custom library.
 For simplicity's sake we provide you with an interface that hides the complexity of that library.
@@ -26,10 +23,10 @@ and a function to check for input.
 By combining 'forward' and 'turn'(even inside loops), you can draw lots of nice shapes!
 Good luck, and have fun!
 """
+from Start import *
+
 
 def program():
-    x = get()
-    print (x)
     if get() == 119:
         forward(1)
     if get() == 97:
@@ -38,6 +35,16 @@ def program():
         forward(-1)
     if get() == 100:
         turn(90)
+    if get() == 114: #R
+        change_color_to("red")
+    if get() == 103:#G
+        change_color_to("green")
+    if get() == 98:#B
+        change_color_to("blue")
+    if get() == 122:#Z
+        change_color_to("black")
+        forward(10)
+    print(get())
 
 run(program)
 
