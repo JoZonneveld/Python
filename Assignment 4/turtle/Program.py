@@ -35,13 +35,13 @@ def program():
         forward(-1)
     if get() == 100:
         turn(90)
-    if get() == 114:
+    if get() == 114: #R
         change_color_to("red")
-    if get() == 103:
+    if get() == 103:#G
         change_color_to("green")
-    if get() == 98:
+    if get() == 98:#B
         change_color_to("blue")
-    if get() == 122:
+    if get() == 122:#Z
         change_color_to("black")
         forward(10)
     print(get())
