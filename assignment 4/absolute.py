@@ -1,3 +1,6 @@
-i = float(input("Vul een getal in "))
+i = int(input("Vul een getal in "))
 print("ingevoerde getal is", i)
-print(abs(i))
+if i < 0:
+    print (i * -1)
+else:
+    print(i)
