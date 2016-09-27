@@ -1,8 +1,6 @@
-breedte = int(input("Voer een breedte in: \n"))
-hoogte = int(input("Voer een hoogte in: \n"))
-
-for a in range(hoogte):
-    output = ""
-    for i in range(breedte):
-        output = output + "*"
-    print(output)
+getal = int(input("Voer een getal in: \n"))         # (1, position) -> (PC + 1, S[position-> S.position + (3.0)])
+for a in range(getal):                              #
+    output = ""                                     #
+    for i in range(getal):                          #
+        output = output + "*"                       #
+    print(output)                                   #
