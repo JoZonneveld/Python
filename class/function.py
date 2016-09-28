@@ -8,8 +8,8 @@ def even(x):
         return False
 
 def addAll(x,y):
-    som = x
-    for i in range(x+1,y,1):
+    som = 0
+    for i in range(x,y):
         som = som + i
     som = som + y
     return som
