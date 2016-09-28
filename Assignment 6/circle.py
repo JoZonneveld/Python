@@ -3,11 +3,9 @@ diameter = int(input("Voer een diameter van 6 of groter in: \n"))
 while diameter < 6:
     diameter = int(input("Voer een diameter van 6 of groter in: \n"))
 
-row = 0
-for a in range(diameter):
+for a in range(diameter + 1):
     text = ""
-    row += 1
-    d = int(2 * sqrt(0.25 * (pow(diameter, 2)) - pow((0.5 * diameter - row), 2)))
+    d = int(2 * sqrt(0.25 * (pow(diameter, 2)) - pow((0.5 * diameter - a), 2)))
     if (d % 2 == 0): #even
         text = text
     else:

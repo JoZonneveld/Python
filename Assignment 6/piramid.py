@@ -13,13 +13,11 @@ for a in range(hoogte):
     printbetweenmax = 0
 
     #fill then (again)
-    printbetweenmin = mid - row
-    printbetweenmax = mid + row
-    row = row + 1
-    for i in range(last_row):
-        if side >= printbetweenmin and side <= printbetweenmax:
+    printbetweenmin = mid - a
+    printbetweenmax = mid + a
+    for i in range(last_row +1):
+        if i >= printbetweenmin and i <= printbetweenmax:
             output = output + "*"
         else:
             output = output + " "
-        side = side + 1
     print(output)

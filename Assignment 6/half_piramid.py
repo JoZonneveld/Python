@@ -1,11 +1,8 @@
 hoogte = int(input("Voer een getal in: \n"))
 
-aantal = 0
 test = ""
 for a in range(hoogte):
     test = ""
-    aantal = aantal + 1
-
-    for i in range(aantal):
+    for i in range(a + 1):
         test =  test + "*"
     print(test)

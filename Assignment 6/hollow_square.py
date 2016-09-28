@@ -1,17 +1,13 @@
 breedte = int(input("Voer een breedte in: \n"))
 hoogte = int(input("Voer een hoogte in: \n"))
-row = 0
 for a in range(hoogte):
-    side = 0
-    row = row + 1
     output = ""
-    if row == 1 or row == hoogte:
+    if a == 0 or a == (hoogte - 1):
         for i in range(breedte):
             output = output + "*"
     else:
         for i in range(breedte):
-            side = side + 1
-            if side == 1 or side == breedte:
+            if i == 0 or i == (breedte - 1):
                 output = output + "*"
             else:
                 output = output + " "
