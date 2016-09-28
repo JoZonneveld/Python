@@ -10,6 +10,6 @@ def even(x):
 def addAll(x,y):
     som = 0
     for i in range(x,y):
-        som = som + i
-    som = som + y
+        som += i
+    som += y
     return som
