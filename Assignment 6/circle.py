@@ -1,7 +1,7 @@
 from math import sqrt
-diameter = int(input("Voer een diameter van 6 of groter in: \n"))
+diameter = int(input("Voer een getal in van 6 of groter: \n"))
 while diameter < 6:
-    diameter = int(input("Voer een diameter van 6 of groter in: \n"))
+    diameter = int(input("Voer een getal in van 6 of groter: \n"))
 
 for a in range(diameter + 1):
     text = ""

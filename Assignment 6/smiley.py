@@ -4,7 +4,9 @@ while diameter < 6:
     diameter = int(input("Voer een diameter van 6 of groter in: \n"))
 
 row = 0
-
+eyes = True
+nose = True
+Mouth = True
 for a in range(diameter):
     text = ""
     side = 0
@@ -14,6 +16,7 @@ for a in range(diameter):
         text = text
     else:
         d += 1
+
     space = (diameter - d) / 2
     if row == 1 or row == (diameter - 1):
         for c in range(int(space)):
@@ -23,11 +26,25 @@ for a in range(diameter):
     else:
         for c in range(int(space)):
             text = text + " "
-        for b in range(d):
-            side += 1
-            if side == 1 or side == d:
-                text = text + "*"
-            else:
-                text = text + " "
+
+        if (d == diameter or d == (diameter - 1)) and eyes == True:
+            placeEye1 = int(diameter / 3)
+            placeEye2 = int(diameter / 3 * 2)
+            for b in range(d):
+                side += 1
+                if side == 1 or side == d:
+                    text = text + "*"
+                elif side == placeEye1 or side == placeEye2:
+                    text = text + "#"
+                else:
+                    text = text + " "
+            eyes = False
+        else:
+            for b in range(d):
+                side += 1
+                if side == 1 or side == d:
+                    text = text + "*"
+                else:
+                    text = text + " "
 
     print(text)
