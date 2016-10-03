@@ -231,14 +231,23 @@ def circle():
 
 def smiley():
     from math import sqrt
-    diameter = int(input("Voer een diameter van 6 of groter in: \n"))
-    while diameter < 6:
-        diameter = int(input("Voer een diameter van 6 of groter in: \n"))
+    diameter = int(input("Voer een diameter van 10 of groter in: \n"))
+    while diameter < 10:
+        diameter = int(input("Voer een diameter van 10 of groter in: \n"))
 
     row = 0
     eyes = True
     nose = True
     Mouth = True
+
+    placeEye1 = int(diameter / 3)
+    placeEye2 = int(diameter / 3 * 2)
+    placeNose = int(diameter / 2)
+    mouthwidthmin = int(diameter / 3)
+    mouthwidthmax = int(diameter / 3 * 2)
+    placeMouth = int(diameter / 3 * 2)
+
+
     for a in range(diameter):
         text = ""
         side = 0
@@ -259,15 +268,36 @@ def smiley():
             for c in range(int(space)):
                 text = text + " "
 
-            if (d == diameter or d == (diameter - 1)) and eyes == True:
-                placeEye1 = int(diameter / 3)
-                placeEye2 = int(diameter / 3 * 2)
+            if row == placeNose and nose == True:
                 for b in range(d):
                     side += 1
                     if side == 1 or side == d:
                         text = text + "*"
-                    elif side == placeEye1 or side == placeEye2:
-                        text = text + "#"
+                    elif side == placeNose:
+                        text = text + "7"
+                    else:
+                        text = text + " "
+                nose = False
+            elif row == placeMouth and Mouth == True:
+                for b in range(d):
+                    side += 1
+                    if side == 1 or side == d:
+                        text = text + "*"
+                    elif side == mouthwidthmin:
+                        text = text + "\\"
+                    elif side == mouthwidthmax:
+                        text = text + "/"
+                    elif side > mouthwidthmin and side < mouthwidthmax:
+                        text = text + "_"
+                    else:
+                        text = text + " "
+            elif (d == diameter or d == (diameter - 1)) and eyes == True:
+                for b in range(d):
+                    side += 1
+                    if side == placeEye1 or side == placeEye2:
+                        text = text + "O"
+                    elif side == 1 or side == d:
+                        text = text + "*"
                     else:
                         text = text + " "
                 eyes = False
@@ -280,6 +310,8 @@ def smiley():
                         text = text + " "
 
         print(text)
+
+    #smiley done
 
 
 def square():
