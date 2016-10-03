@@ -134,23 +134,20 @@ def rps():
 # ------------------------------------------------------------Assignment 5--------------------------------------------------------------
 
 def encryption():
-    import re
     text = input("vul iets in\n")
     getal = 999 #raar getal om loop te triggeren
     while getal > 26 or getal < -26:
         getal = int(input("vul een getal in tussen -26 en 26 \n"))
     for i in text:
         a = (ord(i))
-        if re.search(r'[a-z_]', i):
+        if a >= 97 and a <= 122:#kleine letter controlle
             eind = a + getal
             if eind > 122:
                 eind -= 26
             elif eind < 97:
                 eind += 26
             print(chr(eind), end="")
-
-            #a = 97 z = 122
-        elif re.search(r'[A-Z_]', i):
+        elif a >= 65 and a <= 90:#hoofdletter controlle
             eind = a + getal
             if eind > 90:
                 eind -= 26
@@ -159,29 +156,40 @@ def encryption():
             #A = 65 Z = 90
             print(chr(eind), end="")
 
+
 def password():
-    import re
     password = input("Vul uw wachtwoord in: \n")
 
-    i = len(password)
-
     passwordstrenght = 0
+    L = len(password) #lengte password
+    kl  = False #bevat kleine letter?
+    hl  = False #bevat hoofdletter?
+    sp  = False #bevat speciaal teken?
+    g   = False #bevat getal?
 
-    if re.search(r'[A-Z]', password):
+    for i in password:
+        a = (ord(i))
+        if a >= 97 and a <= 122:#kleine letter controlle
+            kl = True
+        elif a >= 65 and a <= 90:#hoofdletter controlle
+            hl = True
+        elif (a >= 35 and a <= 47) or (a >= 58 and a <= 64) or (a >= 91 and a <= 96) or (a >= 123 and a <= 126): #speciale caracter controlle
+            sp = True
+        elif a >= 48 and a <= 57: # getal controlle
+            g = True
+
+    if kl == True:
+        passwordstrenght += 1
+    if hl == True:
+        passwordstrenght += 1
+    if sp == True:
+        passwordstrenght += 2
+    if g == True:
+        passwordstrenght += 1
+
+    if L > 7 and L < 12:
         passwordstrenght = passwordstrenght + 1
-
-    if re.search(r'[0-9_]', password):
-        passwordstrenght = passwordstrenght + 1
-
-    if re.search(r'[a-z_]', password):
-        passwordstrenght = passwordstrenght + 1
-
-    if re.search(r'[,_._@_#_$_%_^_&_*_!]', password):
-        passwordstrenght = passwordstrenght + 2
-
-    if i > 7 and i < 12:
-        passwordstrenght = passwordstrenght + 1
-    elif i >= 12:
+    elif L >= 12:
         passwordstrenght = passwordstrenght + 2
 
     print("Your password scored ", passwordstrenght, "points of 7")
@@ -193,12 +201,12 @@ def password():
     elif passwordstrenght > 0 and passwordstrenght <= 3:
         print("Your password is weak")
 
+
 def reverse():
     x = input("Vul uw antwoord in: \n")
 
-    for c in reversed(x):
-        print(c, end="")
-    #joost
+    for c in range(len(x), 0, -1):
+        print(x[c-1], end="")
 
 # ------------------------------------------------------------Assignment 6--------------------------------------------------------------
 def circle():
@@ -228,7 +236,9 @@ def smiley():
         diameter = int(input("Voer een diameter van 6 of groter in: \n"))
 
     row = 0
-
+    eyes = True
+    nose = True
+    Mouth = True
     for a in range(diameter):
         text = ""
         side = 0
@@ -238,6 +248,7 @@ def smiley():
             text = text
         else:
             d += 1
+
         space = (diameter - d) / 2
         if row == 1 or row == (diameter - 1):
             for c in range(int(space)):
@@ -247,14 +258,29 @@ def smiley():
         else:
             for c in range(int(space)):
                 text = text + " "
-            for b in range(d):
-                side += 1
-                if side == 1 or side == d:
-                    text = text + "*"
-                else:
-                    text = text + " "
+
+            if (d == diameter or d == (diameter - 1)) and eyes == True:
+                placeEye1 = int(diameter / 3)
+                placeEye2 = int(diameter / 3 * 2)
+                for b in range(d):
+                    side += 1
+                    if side == 1 or side == d:
+                        text = text + "*"
+                    elif side == placeEye1 or side == placeEye2:
+                        text = text + "#"
+                    else:
+                        text = text + " "
+                eyes = False
+            else:
+                for b in range(d):
+                    side += 1
+                    if side == 1 or side == d:
+                        text = text + "*"
+                    else:
+                        text = text + " "
 
         print(text)
+
 
 def square():
     getal = int(input("Voer een getal in: \n"))

@@ -1,4 +1,3 @@
-import re
 text = input("vul iets in\n")
 getal = 999 #raar getal om loop te triggeren
 while getal > 26 or getal < -26:
