@@ -78,3 +78,5 @@ for a in range(diameter):
                     text = text + " "
 
     print(text)
+
+#smiley done
