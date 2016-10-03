@@ -1,25 +1,35 @@
-import re
 password = input("Vul uw wachtwoord in: \n")
 
-i = len(password)
-
 passwordstrenght = 0
+L = len(password) #lengte password
+kl  = False #bevat kleine letter?
+hl  = False #bevat hoofdletter?
+sp  = False #bevat speciaal teken?
+g   = False #bevat getal?
 
-if re.search(r'[A-Z]', password):
+for i in password:
+    a = (ord(i))
+    if a >= 97 and a <= 122:#kleine letter controlle
+        kl = True
+    elif a >= 65 and a <= 90:#hoofdletter controlle
+        hl = True
+    elif (a >= 35 and a <= 47) or (a >= 58 and a <= 64) or (a >= 91 and a <= 96) or (a >= 123 and a <= 126): #speciale caracter controlle
+        sp = True
+    elif a >= 48 and a <= 57: # getal controlle
+        g = True
+
+if kl == True:
+    passwordstrenght += 1
+if hl == True:
+    passwordstrenght += 1
+if sp == True:
+    passwordstrenght += 2
+if g == True:
+    passwordstrenght += 1
+
+if L > 7 and L < 12:
     passwordstrenght = passwordstrenght + 1
-
-if re.search(r'[0-9_]', password):
-    passwordstrenght = passwordstrenght + 1
-
-if re.search(r'[a-z_]', password):
-    passwordstrenght = passwordstrenght + 1
-
-if re.search(r'[,_._@_#_$_%_^_&_*_!]', password):
-    passwordstrenght = passwordstrenght + 2
-
-if i > 7 and i < 12:
-    passwordstrenght = passwordstrenght + 1
-elif i >= 12:
+elif L >= 12:
     passwordstrenght = passwordstrenght + 2
 
 print("Your password scored ", passwordstrenght, "points of 7")
@@ -30,8 +40,3 @@ elif passwordstrenght <= 5 and passwordstrenght > 3:
     print("Your password is medium")
 elif passwordstrenght > 0 and passwordstrenght <= 3:
     print("Your password is weak")
-
-
-
-
-

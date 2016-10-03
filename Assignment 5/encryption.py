@@ -5,16 +5,14 @@ while getal > 26 or getal < -26:
     getal = int(input("vul een getal in tussen -26 en 26 \n"))
 for i in text:
     a = (ord(i))
-    if re.search(r'[a-z_]', i):
+    if a >= 97 and a <= 122:#kleine letter controlle
         eind = a + getal
         if eind > 122:
             eind -= 26
         elif eind < 97:
             eind += 26
         print(chr(eind), end="")
-
-        #a = 97 z = 122
-    elif re.search(r'[A-Z_]', i):
+    elif a >= 65 and a <= 90:#hoofdletter controlle
         eind = a + getal
         if eind > 90:
             eind -= 26
