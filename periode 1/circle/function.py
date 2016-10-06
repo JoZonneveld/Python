@@ -16,7 +16,6 @@ def smiley(d, x, y, check):
             check = 5
         elif x == mouthwidthmax and y > mouthwidthmin and y < mouthwidthmax:
             check = 6
-
     return check
 
 def hollow(d, x, y):
