@@ -7,7 +7,7 @@ for x in range(d):
     for y in range(d):
         check = hollow_circle(d, x, y)
         if check == 1: #standaart
-            output += "*"
+            output += " "
         elif check == 2: #ogen
             output += "O"
         elif check == 3: #neus
