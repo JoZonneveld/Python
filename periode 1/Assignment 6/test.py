@@ -1,4 +1,3 @@
-i = int(12)
+x = "i am" * str(2016 - 1995)
 
-print(int(i / 3))
-print(int(i / 3 * 2))
+print(x)
