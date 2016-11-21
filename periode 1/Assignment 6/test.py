@@ -1,40 +1,37 @@
-<<<<<<< HEAD
-x = "i am" * str(2016 - 1995)
+diameter = int(input("Voer een diameter in: \n"))
 
-print(x)
-=======
-import math
-diameter = int(input("Voer een getal in: \n")) # input
-center_x = diameter/2
-center_y = diameter/2
-for x in range(diameter+1):
+oog1            =   int(diameter/3)
+oog2            =   int((diameter/3) * 2)
+oogLocatie      =   int(diameter/3)
+
+neus_locatie    =   int(diameter/2)
+
+mondhoek1       =   int(diameter/3)
+mondhoek2       =   int((diameter/3) * 2)
+mond_locatie    =   int((diameter/3) * 2)
+
+
+for a in range(diameter):
     output = ""
-    for y in range(diameter+1):
-        distance = math.sqrt((center_x-x)**2 + (center_y-y)**2)
-        distance = math.ceil(distance)
-        if(distance <= diameter/2):
-            output += "#"
-        else:
-            output += " "
+    if a == 0 or a == (diameter - 1):
+        for i in range(diameter):
+            output = output + "*"
+    else:
+        for i in range(diameter):
+            if i == 0 or i == (diameter - 1):
+                output = output + "*"
+            elif a == oogLocatie and i == oog1:
+                output = output + "O"
+            elif a == oogLocatie and i == oog2:
+                output = output + "O"
+            elif a == neus_locatie and i == neus_locatie:
+                output = output + "7"
+            elif (a-1) == mond_locatie and i == mondhoek1:
+                output = output + "/"
+            elif (a-1) == mond_locatie and i == mondhoek2:
+                output = output + "\\"
+            elif a == mond_locatie and i > mondhoek1 and i < mondhoek2:
+                output += "_"
+            else:
+                output = output + " "
     print(output)
-
-
-
-
-
-'''
-getal = int(input("Voer een getal in: \n")) # input
-
-text = 1 # hoeveel ga je uitprinten
-
-for a in range(getal):
-    output=""
-    space = getal - (a - 1)
-    for i in range(space):
-        output += "/"
-    for x in range(text):
-        output += "*"
-    print(output)
-    text += 2
-'''
->>>>>>> origin/master
