@@ -1,4 +1,37 @@
+<<<<<<< HEAD
 diameter = int(input("Voer een diameter in: \n"))
+=======
+<<<<<<< HEAD
+output = ""
+for i in range(0, 4):
+    for j in range(0, 4):
+        if (i + j) % 2 == 0:
+            output += "0"
+        else:
+            output += "="
+    output += "\n"
+print(output)
+=======
+<<<<<<< HEAD
+x = "i am" * str(2016 - 1995)
+
+print(x)
+=======
+import math
+diameter = int(input("Voer een getal in: \n")) # input
+center_x = diameter/2
+center_y = diameter/2
+for x in range(diameter+1):
+    output = ""
+    for y in range(diameter+1):
+        distance = math.sqrt((center_x-x)**2 + (center_y-y)**2)
+        distance = math.ceil(distance)
+        if(distance <= diameter/2):
+            output += "#"
+        else:
+            output += " "
+    print(output)
+>>>>>>> origin/master
 
 oog1            =   int(diameter/3)
 oog2            =   int((diameter/3) * 2)
@@ -35,3 +68,10 @@ for a in range(diameter):
             else:
                 output = output + " "
     print(output)
+<<<<<<< HEAD
+=======
+    text += 2
+'''
+>>>>>>> origin/master
+>>>>>>> origin/master
+>>>>>>> origin/master
