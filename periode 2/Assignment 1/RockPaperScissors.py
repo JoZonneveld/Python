@@ -16,10 +16,8 @@ class RockPaperScissors:
     def pick(self):
         play1 = Player(self.player1, 0)
         play2 = Player(self.player2, 0)
-        scorep1 = play1.score
-        scorep2 = play2.score
 
-        while scorep2 !=2 and scorep1 !=2:
+        while play2.score !=2 and play1.score !=2:
 
             randompick = [0, 1, 2]
             #0 = rock
@@ -49,10 +47,12 @@ class RockPaperScissors:
                 print("Player1 krijgt 1 punt")
                 play1.increaseScore(1)
 
-            scorep1 = play1.score
-            scorep2 = play2.score
-        print("Eindstand P1:", scorep1, " - P2:", scorep2)
-        if scorep1 > scorep2:
+            if play1.score != 2 and play2.score != 2:
+                print("Stand P1:", play1.score, " - P2:", play2.score)
+
+
+        print("Eindstand P1:", play1.score, " - P2:", play2.score)
+        if play1.score > play2.score:
             print("P1 Wint!!!")
         else:
             print("P2 Wint!!!")
