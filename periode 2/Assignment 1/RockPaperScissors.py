@@ -20,7 +20,6 @@ class RockPaperScissors:
         scorep2 = play2.score
 
         while scorep2 !=2 and scorep1 !=2:
-
             randompick = [0, 1, 2]
             #0 = rock
             #1 = paper
@@ -31,26 +30,28 @@ class RockPaperScissors:
             if player1pick == player2pick:
                 print("draw")
             elif player1pick == 0 and player2pick == 1:
-                print("Player2 krijgt 1 punt")
+                print("Player 1 pakt rock, Player 2 pakt paper. P2 wint")
                 play2.increaseScore(1)
             elif player1pick == 0 and player2pick == 2:
-                print("Player1 krijgt 1 punt")
+                print("Player 1 pakt rock, Player 2 pakt scissors. P1 wint")
                 play1.increaseScore(1)
             elif player1pick == 1 and player2pick == 0:
-                print("Player1 krijgt 1 punt")
+                print("Player 1 pakt paper, Player 2 pakt rock. P1 wint")
                 play1.increaseScore(1)
             elif player1pick == 1 and player2pick == 2:
-                print("Player2 krijgt 1 punt")
+                print("Player 1 pakt paper, Player 2 pakt scissors. P2 wint")
                 play2.increaseScore(1)
             elif player1pick == 2 and player2pick == 0:
-                print("Player2 krijgt 1 punt")
+                print("Player 1 pakt scissors, Player 2 pakt rock. P2 wint")
                 play2.increaseScore(1)
             elif player1pick == 2 and player2pick == 1:
-                print("Player1 krijgt 1 punt")
+                print("Player 1 pakt scissors, Player 2 pakt paper. P1 wint")
                 play1.increaseScore(1)
 
             scorep1 = play1.score
             scorep2 = play2.score
+            if scorep2 !=2 and scorep1 !=2:
+                print("Stand P1:", scorep1, " - P2:", scorep2)
         print("Eindstand P1:", scorep1, " - P2:", scorep2)
         if scorep1 > scorep2:
             print("P1 Wint!!!")
