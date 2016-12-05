@@ -18,5 +18,4 @@ def rec_count(l):
     else:
         return rec_count(l.Tail) +1
 
-
 print(rec_count(list))
