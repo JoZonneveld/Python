@@ -14,7 +14,6 @@ for i in range(5):
 
 
 def som(willekeurigenaam):
-    count=0
     while not willekeurigenaam.IsEmpty:
         count += willekeurigenaam.Value
         willekeurigenaam = willekeurigenaam.PrevNode

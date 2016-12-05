@@ -9,14 +9,14 @@ class Node:
         self.Tail = tail
 
 list = Empty()
-for i in range(1, 5):
+for i in range(6):
     list = Node(i, list)
-    print (list.Value)
 
-def reverse(list):
-    tmplist = Empty()
-    while not list.IsEmpty:
-        tmplist = Node(list.Value, tmplist)
-        list = list.Tail
-        print(tmplist.Value)
-reverse(list)
+def rec_count(l):
+    if l.IsEmpty:
+        return 0
+    else:
+        return rec_count(l.Tail) +1
+
+
+print(rec_count(list))
