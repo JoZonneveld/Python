@@ -11,12 +11,19 @@ class Node:
 list = Empty()
 for i in range(1, 5):
     list = Node(i, list)
-    print (list.Value)
 
-def reverse(list):
+def check(l):
+    while not l.IsEmpty:
+        print(l.Value)
+        l = l.Tail
+check(list)
+
+def reverse(l):
     tmplist = Empty()
-    while not list.IsEmpty:
-        tmplist = Node(list.Value, tmplist)
-        list = list.Tail
+    while not l.IsEmpty:
+        tmplist = Node(l.Value, tmplist)
+        l = l.Tail
+    while not tmplist.IsEmpty:
         print(tmplist.Value)
+        tmplist = tmplist.Tail
 reverse(list)
