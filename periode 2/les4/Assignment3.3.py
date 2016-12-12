@@ -15,9 +15,9 @@ def draw_square(n):
 def draw_empty_square(n):
     l = (draw_line(n) + "\n")
     empty_line=("*" + (repeat(" ", (n-2)) + "*\n"))
-    return (l + empty_line + l)
+    return (l + repeat(empty_line, n-2) + l)
 
 
-res = draw_empty_square(3)
+res = draw_square(3)
 
 print(res)
