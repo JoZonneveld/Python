@@ -14,6 +14,6 @@ def draw_triangle(n):
     else:
         return draw_line(n) + ("\n" + draw_triangle((n-1)))
 
-res = draw_triangle(3)
+res = draw_triangle(5)
 
 print(res)
