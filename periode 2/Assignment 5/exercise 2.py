@@ -30,7 +30,7 @@ class Node:
         return Node (v, self)
 
     def __str__ (self):
-        return str(self.Value ) + " <<" + str (self.Tail)
+        return str(self.Value ) + " - " + str (self.Tail)
 
     def IsEmpty(self):
         return False
@@ -45,21 +45,19 @@ class Node:
         return Node(f(self.Value), self.Tail.Map(f))
 
     def Filter (self ,p) :
-        xs = self.Tail.Filter( p)
+        xs = self.Tail.Filter(p)
         if p(self.Value):
             return Node(self.Value, xs)
         else:
-            return xs
+            return 0
 
-    def Fold (self ,f ,z) :
+    def Fold (self,f , z) :
         return f(self.Value , self.Tail.Fold(f , z))
-
-
 
 l = Node(5, Node(9, Node(-1, Empty())))
 
 print(l.Length())
 print(l.Sum())
 print(l.Map(lambda x: x+2))
-print(l.Filter(lambda x: x % 3))
+print(l.Filter(lambda x: x % 3 == 0))
 # print(l.Fold())
